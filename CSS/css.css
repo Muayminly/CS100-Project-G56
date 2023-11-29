@@ -71,8 +71,9 @@
   }
 
 .header {
-    background-image: url('../image/bg-header.jpg');
+    background-color: aqua;
     background-attachment: fixed;
+    
     text-align: center;
     padding: 50px;
     display: flex;
@@ -110,4 +111,10 @@
 }
 img {
     padding: 5px;
+}
+.img_right{
+  float: right;
+}
+.quote{
+  text-align: center;
 }
