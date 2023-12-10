@@ -121,9 +121,6 @@ img {
   background-color:darkred;
   color: white;
 }
-.box{
-
-}
 
 
 
@@ -187,7 +184,7 @@ img {
 .progress__highlight {
   transition: width 0.15s linear;
   background: #4b9aaa;
-  heigh: 100%;
-  width 0%;
+  height: 100%;
+  width: 0%;
 }
 
