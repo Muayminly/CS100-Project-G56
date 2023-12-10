@@ -48,7 +48,7 @@ const config = {
     }
     return true;
   }
-  
+  //add1
   function validatePhone() {
     const phoneInput = document.getElementById("phoneNum");
     const phonePattern = /^\d{10}$/;
@@ -56,7 +56,7 @@ const config = {
   
     if (!phonePattern.test(phoneInput.value)) {
       errorElement.textContent =
-        "Please enter your phone.";
+        "Please enter your phone number.";
       return false;
     } else {
       errorElement.textContent = ""; 
@@ -101,7 +101,7 @@ const config = {
     }
   }
   
-  
+  //add2
   document.addEventListener("DOMContentLoaded", async () => {
     const activityTypes = await fetchActivityTypes();
     populateActivityTypes(activityTypes);
@@ -188,3 +188,67 @@ const config = {
     .addEventListener("input", validateStudentID);
   document.getElementById("email").addEventListener("input", validateEmail);
   document.getElementById("phoneNum").addEventListener("input", validatePhone);
+
+  document.addEventListener("DOMContentLoaded",async()=>{
+    const activityTypes=await fetchActivityTypes();
+    populateActivityTypes(activityTypes);
+  })
+//add3
+  function image(){
+    var input = document.getElementById("image");
+    var imageContainer = document.getElementById("showimg");  
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            
+            var imageElement = document.createElement("img");
+            imageElement.src = e.target.result;
+            imageElement.width = 300; 
+            imageContainer.innerHTML = ""; 
+            imageContainer.appendChild(imageElement);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function getResult(){
+    document .getElementById('showresult').removeAttribute('hidden')
+    let topic = "Information"
+    let fullname = document.getElementById('fullname')
+    let stid = document.getElementById('studentID')
+    let mail = document.getElementById('email')
+    let mobilenum = document.getElementById('phoneNum')
+    let fact = document.getElementById('faculty')
+    let type = document.getElementById('activityType')
+    let year = document.getElementById('academicYear')
+    let semester = document.getElementById('semester')
+    let start = document.getElementById('startDate')
+    let end = document.getElementById('endDate')
+    let image = document.getElementById('image')
+    let location = document.getElementById('location')
+    let description = document.getElementById('description')
+  
+    
+    let res = document.getElementById('showresult')
+    let msg = ''
+    msg += '<h1><center>' + topic + '</center></h1>';
+    msg += '<p><b>Full Name :</b> '+ fullname.value +'</p>'
+    msg += '<p><b>Student ID :</b> '+ stid.value +'</p>'
+    msg += '<p><b>Date of Birth :</b> '+ birth.value +'</p>'
+    msg += '<p><b>University Email :</b> '+ mail.value +'</p>'
+    msg += '<p><b>Mobile Number : </b> '+ mobilenum.value +'</p>'
+    msg += '<p><b>FACULTIES / COLLEGES :</b> '+ fact.value +'</p>'
+    msg += '<p><b>Type of Work/Activity :</b> '+ type.value +'</p>'
+    msg += '<p><b>Academic Year :</b> ' + year.value +'</p>'
+    msg += '<p><b>Semester :</b> '+ semester.value +'</p>'
+    msg += '<p><b>Start Date/Time :</b> '+ start.value +'</p>'
+    msg += '<p><b>End Date/Time :</b> '+ end.value +'</p>'
+    msg += '<p><b>Image :</b> '+ image.value +'</p>'
+    msg += '<p><b>Location :</b> '+ location.value +'</p>'
+    msg += '<p><b>Description :</b> '+ description.value +'</p>'
+  
+    res.innerHTML = msg
+  
+    res.scrollIntoView()
+  }
+  
