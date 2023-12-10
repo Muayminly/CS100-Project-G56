@@ -52,13 +52,12 @@ const config = {
   }
 //add
   function validatePhone() {
-    const phoneInput = document.getElementById("phoneNum");
-    const phonePattern = /^\d{10}$/;
+    const phoneNumInput = document.getElementById("phoneNum");
+    const phoneNumPattern = /^\d{10}$/;
     const errorElement = document.getElementById("phoneNumError");
   
-    if (!phonePattern.test(phoneInput.value)) {
-      errorElement.textContent =
-        "Please enter your phone number.";
+    if (!phoneNumPattern.test(phoneNumInput.value)) {
+      errorElement.textContent = "Please enter your phone number.";
       return false;
     } else {
       errorElement.textContent = ""; 
@@ -153,14 +152,14 @@ const config = {
       last_name: formData.get("fullname").split(" ")[1],
       student_id: parseInt(formData.get("studentID")),
       email: formData.get("email"),
-      phoneNum: formData.get("phoneNum")
+      phoneNum: formData.get("phoneNum"),
       title: formData.get("workTitle"),
       type_of_work_id: parseInt(formData.get("activityType")),
       academic_year: parseInt(formData.get("academicYear")) - 543,
       semester: parseInt(formData.get("semester")),
       start_date: formData.get("startDate"),
       end_date: formData.get("endDate"),
-      image: formData.get("image")
+      image: formData.get("image"),
       location: formData.get("location"),
       description: formData.get("description")
     };
