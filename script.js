@@ -140,6 +140,7 @@ const config = {
       semester: parseInt(formData.get("semester")),
       start_date: formData.get("startDate"),
       end_date: formData.get("endDate"),
+      image: formData.get("image"),
       location: formData.get("location"),
       description: formData.get("description")
     };
@@ -188,12 +189,12 @@ const config = {
     .addEventListener("input", validateStudentID);
   document.getElementById("email").addEventListener("input", validateEmail);
   document.getElementById("phoneNum").addEventListener("input", validatePhone);
-
+//add3
   document.addEventListener("DOMContentLoaded",async()=>{
     const activityTypes=await fetchActivityTypes();
     populateActivityTypes(activityTypes);
   })
-//add3
+//add4
   function image(){
     var input = document.getElementById("image");
     var imageContainer = document.getElementById("showimg");  
@@ -218,7 +219,6 @@ const config = {
     let stid = document.getElementById('studentID')
     let mail = document.getElementById('email')
     let mobilenum = document.getElementById('phoneNum')
-    let fact = document.getElementById('faculty')
     let type = document.getElementById('activityType')
     let year = document.getElementById('academicYear')
     let semester = document.getElementById('semester')
@@ -234,10 +234,8 @@ const config = {
     msg += '<h1><center>' + topic + '</center></h1>';
     msg += '<p><b>Full Name :</b> '+ fullname.value +'</p>'
     msg += '<p><b>Student ID :</b> '+ stid.value +'</p>'
-    msg += '<p><b>Date of Birth :</b> '+ birth.value +'</p>'
     msg += '<p><b>University Email :</b> '+ mail.value +'</p>'
     msg += '<p><b>Mobile Number : </b> '+ mobilenum.value +'</p>'
-    msg += '<p><b>FACULTIES / COLLEGES :</b> '+ fact.value +'</p>'
     msg += '<p><b>Type of Work/Activity :</b> '+ type.value +'</p>'
     msg += '<p><b>Academic Year :</b> ' + year.value +'</p>'
     msg += '<p><b>Semester :</b> '+ semester.value +'</p>'
